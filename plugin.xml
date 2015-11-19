@@ -1,0 +1,18 @@
+    <?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="plugin-parse-installation" version="0.0">
+        <name>Installation</name>
+        <description>Cordova Parse Installation</description>
+        <license>Apache 2.0</license>
+        <keywords>cordova,device</keywords>
+        <js-module src="www/installation.js" name="installation">
+            <clobbers target="installation" />
+        </js-module>
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="Installation">
+                    <param name="android-package" value="CDVInstallation"/>
+                </feature>
+            </config-file>
+        </platform>
+    </plugin>
