@@ -8,6 +8,7 @@ import org.json.JSONException;
 import android.app.Application;
 import org.apache.cordova.*;
 import com.parse.Parse;
+import com.parse.ParseQuery;
 import com.parse.ParseInstallation;
 /**
  * This class echoes a string called from JavaScript.
@@ -18,11 +19,11 @@ public class Hello extends CordovaPlugin
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("hello")) {
             // Get the given username
-            String username = args.getString(0);
+            //String username = args.getString(0);
             // Find devices associated with that username
             ParseQuery installationQuery = ParseInstallation.getQuery();
             //pushQuery.whereMatchesQuery("username", username);
-            installationQuery.whereEqualTo("username", username);
+            installationQuery.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
             installationQuery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> installationList, ParseException e) {
                     if (e == null) {
