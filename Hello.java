@@ -11,6 +11,9 @@ import com.parse.Parse.*;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+import com.parse.ParseObject.FindCallback;
+import com.parse.FindCallback;
 /**
  * This class echoes a string called from JavaScript.
  */
