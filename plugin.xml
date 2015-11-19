@@ -1,32 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-        id="org.apache.cordova.plugin"
+        id="org.cordova.test"
         version="0.1.0">
 
     <engines>
         <engine name="cordova" version="5.4.0" />
     </engines>
 
-    <name>Parse Installation Plugin</name>
-    <description>A plugin that will allow you to access Parse
-		installation objects</description>
-    <author>James Kotzian</author>
-    <keywords>Parse, installation</keywords>
+    <name>Hello</name>
+    <description>A hello-world plugin</description>
+    <author>Andreas Wallström</author>
+    <keywords>foo,bar</keywords>
 
 
 
-    <js-module src="installation.js" name="installation">
-        <clobbers target="installation" />
+    <js-module src="hello.js" name="hello">
+        <clobbers target="hello" />
     </js-module>
 
     <!-- Android -->
     <platform name="android">
-        <source-file src="installation.java" target-dir="src/org/apache/cordova/plugin" />
+        <source-file src="Hello.java" target-dir="src/org/apache/cordova/plugin" />
 
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Installation" >
-                <param name="android-package" value="org.apache.cordova.plugin.Hello"/>
+        <config-file target="config.xml" parent="/*">
+            <feature name="Hello" >
+                <param name="android-package" value="org.cordova.test.Hello"/>
             </feature>
         </config-file>
     </platform>
