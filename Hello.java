@@ -33,7 +33,7 @@ public class Hello extends CordovaPlugin
             installationQuery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> installationList, ParseException e) {
                     if (e == null) {
-                        String installationId = installationList[0].getString("installationId");
+                        String installationId = installationList.get(0).getString("installationId");
                         hello(installationId, callbackContext);
                         //Log.d("installation", "Retrieved " + installationList.size() + " installations");
                     } else {
