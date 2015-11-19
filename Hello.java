@@ -12,7 +12,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
-import com.parse.ParseObject.FindCallback;
+import com.parse.List;
 import com.parse.FindCallback;
 /**
  * This class echoes a string called from JavaScript.
@@ -33,9 +33,9 @@ public class Hello extends CordovaPlugin
                     if (e == null) {
                         String installationId = installationList[0].getString("installationId");
                         this.hello(installationId, callbackContext);
-                        Log.d("installation", "Retrieved " + installationList.size() + " installations");
+                        //Log.d("installation", "Retrieved " + installationList.size() + " installations");
                     } else {
-                        Log.d("installation", "Error: " + e.getMessage());
+                        //Log.d("installation", "Error: " + e.getMessage());
                     }
                 }
             });
