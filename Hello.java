@@ -7,7 +7,7 @@ import org.json.JSONException;
 
 import android.app.Application;
 import org.apache.cordova.*;
-import com.parse.Parse;
+import com.parse.Parse.*;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.ParseInstallation;
