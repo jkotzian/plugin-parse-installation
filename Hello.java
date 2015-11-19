@@ -22,7 +22,7 @@ import java.util.List;
 public class Hello extends CordovaPlugin
 {
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("hello")) {
             // Get the given username
             //String username = args.getString(0);
