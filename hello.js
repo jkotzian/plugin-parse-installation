@@ -1,7 +1,7 @@
-var installation = {
+var hello = {
     setUsernameForInstallationId: function(str, callback) {
-    	cordova.exec(callback, function(err) {callback('Nothing here!');}, "MyInstallation", "installation", [str]);
+    	cordova.exec(callback, function(err) {callback('Nothing here!');}, "MyInstallation", "hello", [str]);
     }
 }
 
-module.exports = installation;
+module.exports = hello;
