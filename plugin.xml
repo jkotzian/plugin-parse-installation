@@ -13,6 +13,8 @@
     <author>Andreas Wallström</author>
     <keywords>foo,bar</keywords>
 
+
+
     <js-module src="hello.js" name="hello">
         <clobbers target="hello" />
     </js-module>
