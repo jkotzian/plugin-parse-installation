@@ -7,4 +7,4 @@ var hello = {
     }
 }
 
-module.exports = {hello, hey};
+module.exports = hello;
