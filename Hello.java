@@ -17,6 +17,8 @@ import com.parse.ParseException;
 
 import java.util.List;
 import android.widget.Toast;
+import android.content.Context;
+
 /**
  * This class echoes a string called from JavaScript.
  */
