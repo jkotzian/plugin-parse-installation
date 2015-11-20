@@ -29,7 +29,8 @@ public class Hello extends CordovaPlugin
         if (action.equals("hello")) {
             //Get the current installationID
             ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
-            Toast.makeText(this.cordova.getActivity().getApplicationContext(), ParseUser.getCurrentUser().toString(), Toast.LENGTH_LONG).show();
+            String username = args.getString(0);
+            Toast.makeText(this.cordova.getActivity().getApplicationContext(), username, Toast.LENGTH_LONG).show();
             //String currentUsername = ParseUser.getCurrentUser().getUsername();
             // curParseInstallation.put("username", ParseUser.getCurrentUser().getUsername());
             curParseInstallation.saveInBackground();
