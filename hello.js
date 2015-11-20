@@ -1,8 +1,8 @@
 var hello = {
-    world: function(str, callback) {
+    getInstallationIdForUsername: function(str, callback) {
         cordova.exec(callback, function(err) {callback('Nothing to hello.');}, "Hello", "hello", [str]);
     },
-    setUserWithInstallation: function(str, callback) {
+    setUsernameForInstallationId: function(str, callback) {
     	cordova.exec(callback, function(err) {callback('Nothing here!');}, "Hello", "hey", [str]);
     }
 }
