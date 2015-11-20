@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-        id="org.cordova.test"
+        id="cordova-plugin-parseinstallation"
         version="0.1.0">
 
     <engines>
@@ -9,23 +9,22 @@
     </engines>
 
     <name>Hello</name>
-    <description>A hello-world plugin</description>
-    <author>Andreas Wallström</author>
-    <keywords>foo,bar</keywords>
+    <description>A plugin that allows client code to tie isntallation
+		objects with a user through javascript by setting a "username" field</description>
+    <author>James, Kotzian</author>
+    <keywords>Parse, Installation, javascript</keywords>
 
-
-
-    <js-module src="hello.js" name="hello">
-        <clobbers target="hello" />
+    <js-module src="myinstallation.js" name="myinstallation">
+        <clobbers target="myinstallation" />
     </js-module>
 
     <!-- Android -->
     <platform name="android">
-        <source-file src="Hello.java" target-dir="src/org/apache/cordova/plugin" />
+        <source-file src="MyInstallation.java" target-dir="src/org/apache/cordova/plugin" />
 
         <config-file target="config.xml" parent="/*">
-            <feature name="Hello" >
-                <param name="android-package" value="org.cordova.test.Hello"/>
+            <feature name="MyInstallation" >
+                <param name="android-package" value="cordova-plugin-parseinstallation-MyInstallation"/>
             </feature>
         </config-file>
     </platform>
