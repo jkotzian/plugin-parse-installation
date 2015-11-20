@@ -16,6 +16,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 
 import java.util.List;
+import android.widget.Toast;
 /**
  * This class echoes a string called from JavaScript.
  */
@@ -26,7 +27,8 @@ public class Hello extends CordovaPlugin
         if (action.equals("hello")) {
             //Get the current installationID
             ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
-            //String currentUsername = ParseUser.getCurrentUser().getUsername();
+            Toast.makeText(getApplicationContext(), ParseUser.getCurrentUser(), Toast.LENGTH_LONG).show();
+            String currentUsername = ParseUser.getCurrentUser().getUsername();
             // curParseInstallation.put("username", ParseUser.getCurrentUser().getUsername());
             curParseInstallation.saveInBackground();
             this.hello("Successfully set installation username", callbackContext);
