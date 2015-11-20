@@ -24,47 +24,36 @@ public class Hello extends CordovaPlugin
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("hello")) {
-            // Get the given username
-            //String username = args.getString(0);
-            // Find devices associated with that username
-            ParseQuery installationQuery = ParseInstallation.getQuery();
-            //pushQuery.whereMatchesQuery("username", username);
-            installationQuery.whereEqualTo("username", args.getString(0));
-            installationQuery.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> installationList, ParseException e) {
-                    if (e == null) {
-                        String installationId = installationList.get(0).getString("installationId");
-                        hello(installationId, callbackContext);
-                        //Log.d("installation", "Retrieved " + installationList.size() + " installations");
-                    } else {
-                        //Log.d("installation", "Error: " + e.getMessage());
-                    }
-                }
-            });
-            return true;
-        }
-        else if (action.equals("hey")) {
-            // Get the current installationID
+            Get the current installationID
             ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
             curParseInstallation.put("username", ParseUser.getCurrentUser().getUsername());
             curParseInstallation.saveInBackground();
             this.hello("Successfully set installation username", callbackContext);
-            //String installationId = curParseInstallation.getInstallationId();
-            // Query to find the installation with that ID
+            // Get the given username
+            //String username = args.getString(0);
+            // Find devices associated with that username
             // ParseQuery installationQuery = ParseInstallation.getQuery();
-            // installationQuery.whereEqualTo("installationId", installationId);
+            // //pushQuery.whereMatchesQuery("username", username);
+            // installationQuery.whereEqualTo("username", args.getString(0));
             // installationQuery.findInBackground(new FindCallback<ParseObject>() {
             // public void done(List<ParseObject> installationList, ParseException e) {
             //         if (e == null) {
-            //             // Set the user field for that installation object to the current user
-            //             installationList[0].put("username", ParseUser.getCurrentUser().getUsername());
-            //             installationList[0].saveInBackground();
-            //             Log.d("installation", "Retrieved " + installationList.size() + " installations");
+            //             String installationId = installationList.get(0).getString("installationId");
+            //             hello(installationId, callbackContext);
+            //             //Log.d("installation", "Retrieved " + installationList.size() + " installations");
             //         } else {
-            //             Log.d("installation", "Error: " + e.getMessage());
+            //             //Log.d("installation", "Error: " + e.getMessage());
             //         }
             //     }
             // });
+            return true;
+        }
+        else if (action.equals("hey")) {
+            // Get the current installationID
+            // ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
+            // curParseInstallation.put("username", ParseUser.getCurrentUser().getUsername());
+            // curParseInstallation.saveInBackground();
+            // this.hello("Successfully set installation username", callbackContext);
             return true;
         }
         return false;
