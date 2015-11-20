@@ -22,46 +22,24 @@ import android.content.Context;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class Hello extends CordovaPlugin
+public class MyInstallation extends CordovaPlugin
 {
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        if (action.equals("hello")) {
-            // Get the given username
-            String username = args.getString(0);
-            // Find devices associated with that username
-            ParseQuery installationQuery = ParseInstallation.getQuery();
-            //pushQuery.whereMatchesQuery("username", username);
-            installationQuery.whereEqualTo("username", username);
-            installationQuery.findInBackground(new FindCallback<ParseObject>() {
-            public void done(List<ParseObject> installationList, ParseException e) {
-                    if (e == null) {
-                        String installationId = installationList.get(0).getString("installationId");
-                        hello(installationId, callbackContext);
-                        //Log.d("installation", "Retrieved " + installationList.size() + " installations");
-                    } else {
-                        hello("Error finding installation object!", callbackContext);
-                        //Log.d("installation", "Error: " + e.getMessage());
-                    }
-                }
-            });
-            return true;
-        }
-        else if (action.equals("hey")) {
+        if (action.equals("set")) {
             //Get the current installationID
             ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
             String username = args.getString(0);
-            //Toast.makeText(this.cordova.getActivity().getApplicationContext(), username, Toast.LENGTH_LONG).show();
-            //String currentUsername = ParseUser.getCurrentUser().getUsername();
+            // Set the "username" field to the passed in current username
             curParseInstallation.put("username", username);
             curParseInstallation.saveInBackground();
-            this.hello("Successfully set installation username", callbackContext);
+            this.messageCallback("Successfully set installation username", callbackContext);
             return true;
         }
         return false;
     }
 
-    private void hello(String message, CallbackContext callbackContext) {
+    private void messageCallback(String message, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
             callbackContext.success(message);
         } else {
