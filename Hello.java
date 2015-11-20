@@ -25,9 +25,10 @@ public class Hello extends CordovaPlugin
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("hello")) {
             //Get the current installationID
-            // ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
+            ParseInstallation curParseInstallation = ParseInstallation.getCurrentInstallation();
+            String currentUsername = ParseUser.getCurrentUser().getUsername();
             // curParseInstallation.put("username", ParseUser.getCurrentUser().getUsername());
-            // curParseInstallation.saveInBackground();
+            curParseInstallation.saveInBackground();
             this.hello("Successfully set installation username", callbackContext);
             // Get the given username
             //String username = args.getString(0);
