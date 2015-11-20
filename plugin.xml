@@ -19,11 +19,11 @@
 
     <!-- Android -->
     <platform name="android">
-        <source-file src="MyInstallation.java" target-dir="src/org/apache/cordova/plugin" />
+        <source-file src="Hello.java" target-dir="src/org/apache/cordova/plugin" />
 
         <config-file target="config.xml" parent="/*">
-            <feature name="MyInstallation" >
-                <param name="android-package" value="org.cordova.test.MyInstallation"/>
+            <feature name="Hello" >
+                <param name="android-package" value="org.cordova.test.Hello"/>
             </feature>
         </config-file>
     </platform>
