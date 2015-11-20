@@ -29,7 +29,7 @@ public class Hello extends CordovaPlugin
             // Find devices associated with that username
             ParseQuery installationQuery = ParseInstallation.getQuery();
             //pushQuery.whereMatchesQuery("username", username);
-            installationQuery.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+            installationQuery.whereEqualTo("username", args.getString(0));
             installationQuery.findInBackground(new FindCallback<ParseObject>() {
             public void done(List<ParseObject> installationList, ParseException e) {
                     if (e == null) {
