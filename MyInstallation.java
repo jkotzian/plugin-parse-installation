@@ -22,7 +22,7 @@ import android.content.Context;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class Hello extends CordovaPlugin
+public class MyInstallation extends CordovaPlugin
 {
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
