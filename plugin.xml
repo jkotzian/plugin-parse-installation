@@ -14,7 +14,7 @@
     <keywords>foo,bar</keywords>
 
     <js-module src="hello.js" name="hello">
-        <clobbers target="hello" />
+        <clobbers target="installation" />
     </js-module>
 
     <!-- Android -->
